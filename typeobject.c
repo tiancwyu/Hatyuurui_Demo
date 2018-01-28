@@ -82,7 +82,7 @@ slot_tp_new(PyTypeObject *type, PyObject *args, PyObject *kwds);
 static void
 clear_slotdefs(void);
 
-static void wydbg_printName(void);
+static void wydbg_printName(PyObject *);
 
 void wydbg_printName(PyObject *obj)
 {
@@ -2043,7 +2043,7 @@ best_base(PyObject *bases)
 			if(WYDBG_FLAG_TO == 1)
 				printf("best_base: return beasuse not TYPE class,address of object = 0x%x\n", base_proto);
 //WYDBG IMFORMATION
-			return NULL;
+            return NULL;
         }
         base_i = (PyTypeObject *)base_proto;
         if (base_i->tp_dict == NULL) {
@@ -2106,10 +2106,10 @@ extra_ivars(PyTypeObject *type, PyTypeObject *base)
 		printf("------- extra_ivars -------");
 		printf("	name of type : ");
 		wydbg_printName(type);
-		printf("	type->tp_basicsize : 0x%x, type->tp_itemsize = 0x%x, type->tp_weaklistoffset\n", t_size, type->tp_itemsize, type->tp_weaklistoffset);
+		printf("	type->tp_basicsize : 0x%x, type->tp_itemsize = 0x%x, type->tp_weaklistoffset = 0x%x\n", t_size, type->tp_itemsize, type->tp_weaklistoffset);
 		printf("	name of base : ");
 		wydbg_printName(base);
-		printf("	base->tp_basicsize : 0x%x, base->tp_itemsize = 0x%x, base->tp_weaklistoffset\n", b_size, base->tp_itemsize, base->tp_weaklistoffset);
+		printf("	base->tp_basicsize : 0x%x, base->tp_itemsize = 0x%x, base->tp_weaklistoffset = 0x%x\n", b_size, base->tp_itemsize, base->tp_weaklistoffset);
 		printf("	sizeof(PyObject *) = 0x%x\n", sizeof(PyObject *));
 	}
 //WYDBG IMFORMATION
@@ -2410,11 +2410,11 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
     Py_ssize_t i, nbases, nslots, slotoffset, name_size;
     int j, may_add_dict, may_add_weak, add_dict, add_weak;
 
-    int alen,mCount,mCount2,mCount3;
-    long mFlag;
-    PyObject *mItem, *mItem2,*mItem3;
-    PyListObject *mList;
-	char str_1[] = "WYDBG"; 
+	int alen, mCount, mCount2, mCount3;
+	long mFlag;
+	PyObject *mItem, *mItem2, *mItem3;
+	PyListObject *mList;
+	char str_1[] = "WYDBG", *str_2;
 	PyObject* tmpTmp;
 	Py_ssize_t nnbases;
     
@@ -2449,71 +2449,84 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
     }
 
 	/* Debug imformation add by WY */
-		mItem3 = PyTuple_GetItem(args, 0);
-		if(PyUnicode_Check(mItem3) && (strcmp(char*(PyUnicode_AS_UNICODE(mItem3)), str_1) == 0)){
-			alen = PyTuple_GET_SIZE(args);
-			printf("length of args = %d\n", alen);
+	mItem3 = PyTuple_GetItem(args, 0);
+	if (PyUnicode_Check(mItem3)) {
+		str_2 = PyUnicode_AS_UNICODE(mItem3);
+	}
+	else {
+		*str_2 = 'D';
+	}
+
+	if (PyUnicode_Check(mItem3) && (*str_2 == 'W') &&  (PyUnicode_WSTR_LENGTH(mItem3)==5)) {
+		WySetDbgFlag(1);
+
+		alen = PyTuple_GET_SIZE(args);
+		printf("length of args = %d\n", alen);
 		
 			WYDBG_FLAG_TO = 1;
 			
 			for (mCount = 0; mCount < alen; mCount++){
-				mItem = PyTuple_GetItem(args, mCount);
-				/* get the class of item */
-				mFlag = Py_TYPE(mItem) -> tp_flags ;
-				if(mFlag & Py_TPFLAGS_LONG_SUBCLASS){
-					printf("class of item[%d] is LONG, value = 0x%x\n", mCount, (PyLongObject *)mItem -> ob_digit[0]);
-				}
-				else if(mFlag & Py_TPFLAGS_TUPLE_SUBCLASS){
-					printf("class of item[%d] is TUPLE, the name of Item is: ", mCount);
-					for (mCount2 = 0; mCount2 < PyTuple_GET_SIZE(mItem); mCount2++){
-						mItem2 = PyTuple_GetItem(mItem, mCount2);
-						for (mCount3 = 0; (Py_TYPE(mItem2) -> tp_name[mCount3]) != '\0'; mCount3++)
-						{
-							printf("%c", Py_TYPE(mItem2) -> tp_name[mCount3]);
-						}
-						printf("	");
+			mItem = PyTuple_GetItem(args, mCount);
+			/* get the class of item */
+			mFlag = Py_TYPE(mItem) ->tp_flags;
+			if (mFlag & Py_TPFLAGS_LONG_SUBCLASS) {
+				printf("class of item[%d] is LONG, address = 0x%x, value = 0x%x\n", mCount, (int)(mItem), PyLong_AsLong(mItem));
+			}
+			else if (mFlag & Py_TPFLAGS_TUPLE_SUBCLASS) {
+				printf("class of item[%d] is TUPLE, address = 0x%x, the name of Item is: ", mCount, (int)(mItem));
+				for (mCount2 = 0; mCount2 < PyTuple_GET_SIZE(mItem); mCount2++) {
+					mItem2 = PyTuple_GetItem(mItem, mCount2);
+					for (mCount3 = 0; (Py_TYPE(mItem2)->tp_name[mCount3]) != '\0'; mCount3++)
+					{
+						printf("%c", Py_TYPE(mItem2) ->tp_name[mCount3]);
 					}
-					printf("\n");
+					printf("	");
 				}
-				else if(mFlag & Py_TPFLAGS_UNICODE_SUBCLASS){
-					printf("class of item[%d] is UNICODE, value = ", mCount);
-					for (mCount2 = 0; mCount2 < PyUnicode_GET_SIZE(mItem); mCount2++){
-						printf("%c", PyUnicode_AS_UNICODE(mItem)[mCount2]);
-					}
-					printf("\n");
+				printf("\n");
+			}
+			else if (mFlag & Py_TPFLAGS_UNICODE_SUBCLASS) {
+				printf("class of item[%d] is UNICODE,  address = 0x%x, value = ", mCount, (int)(mItem));
+				for (mCount2 = 0; mCount2 < PyUnicode_GET_SIZE(mItem); mCount2++) {
+					printf("%c", PyUnicode_AS_UNICODE(mItem)[mCount2]);
 				}
-				else if(mFlag & Py_TPFLAGS_DICT_SUBCLASS){
-					printf("class of item[%d] is DICT , key: \n", mCount);
-					mList = PyDict_Keys(mItem);
-					for (mCount2 = 0; mCount2 < PyList_Size(mList); mCount2++){
-						mItem2 = PyList_GetItem(mList, mCount2);
+				printf("\n");
+			}
+			else if (mFlag & Py_TPFLAGS_DICT_SUBCLASS) {
+				printf("class of item[%d] is DICT , address = 0x%x, key: \n", mCount, (int)(mItem));
+				mList = PyDict_Keys(mItem);
+				for (mCount2 = 0; mCount2 < PyList_Size(mList); mCount2++) {
+					mItem2 = PyList_GetItem(mList, mCount2);
 						if(!PyUnicode_Check(mItem2)){
 							printf("		key[%d] is not Unicode.\n", mCount2);
+					}
+					else {
+						printf("		key[%d] : ", mCount2);
+						for (mCount3 = 0; mCount3 < PyUnicode_GET_SIZE(mItem2); mCount3++)
+						{
+							printf("%c", PyUnicode_AS_UNICODE(mItem2)[mCount3]);
 						}
-						else{
-							printf("		key[%d] : ", mCount2);
-							for (mCount3 = 0; mCount3 < PyUnicode_GET_SIZE(mItem2); mCount3++)
-							{
-								printf("%c", PyUnicode_AS_UNICODE(mItem2)[mCount3]);
-							}
-							printf("\n");
-						}
+						printf("\n");
 					}
 				}
-				else{
-					printf("tp_flags = %x\n", mFlag);
-				}	 
+			}
+			else {
+				printf("tp_flags = %x\n", mFlag);
 			}
 		}
 
-	
+		/* Check arguments: (name, bases, dict) */
+		if (!PyArg_ParseTuple(args, "UO!O!:type.__new__", &name, &PyTuple_Type,
+			&bases, &PyDict_Type, &orig_dict))
+			return NULL;
 
-
-    /* Check arguments: (name, bases, dict) */
-    if (!PyArg_ParseTuple(args, "UO!O!:type.__new__", &name, &PyTuple_Type,
-                          &bases, &PyDict_Type, &orig_dict))
-        return NULL;
-
+		WySetDbgFlag(0);
+	}
+	else {
+		/* Check arguments: (name, bases, dict) */
+		if (!PyArg_ParseTuple(args, "UO!O!:type.__new__", &name, &PyTuple_Type,
+			&bases, &PyDict_Type, &orig_dict))
+			return NULL;
+	}
     /* Adjust for empty tuple bases */
     nbases = PyTuple_GET_SIZE(bases);
     if (nbases == 0) {
@@ -2529,12 +2542,13 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
 		if(WYDBG_FLAG_TO == 1){
 //WYDBG IMFORMATION		
 			printf("----------PyId___mro_entries__ initialize---------\n");
-			printf("PyId___mro_entries__.next = 0x%x\n", PyId___mro_entries__.next);
+			printf("Address of PyId___mro_entries__.next = 0x%x\n", PyId___mro_entries__.next);
+			printf("PyId___mro_entries__.string = ");
 			for (i = 0; PyId___mro_entries__.string[i]!='\0';i++){
-				printf("PyId___mro_entries__.string = %c", PyId___mro_entries__.string[i]);
+				printf("%c", PyId___mro_entries__.string[i]);
 			}
 			printf("\n");
-			printf("PyId___mro_entries__.object = 0x%x\n", PyId___mro_entries__.object);
+			printf("Address of PyId___mro_entries__.object = 0x%x\n", PyId___mro_entries__.object);
 			printf("----------PyId___mro_entries__ initialize---------\n");
 //WYDBG IMFORMATION	
 		}
@@ -2550,21 +2564,22 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
 //WYDBG IMFORMATION				
 				printf("----------PyId___mro_entries__ _PyObject_GetAttrId---------\n");
 				PyObject *dbgTmp01 = PyId___mro_entries__.next;
-				printf("	PyId___mro_entries__.next.tp_name = ");
+				printf("	Address of PyId___mro_entries__.next.tp_name = ");
 				for (int dbgI = 0; (Py_TYPE(dbgTmp01) -> tp_name[dbgI]) != '\0'; dbgI ++){
 					printf("%c", Py_TYPE(dbgTmp01) -> tp_name[dbgI]);
 				}
 				printf("\n");
 				
-				for (dbgI = 0; PyId___mro_entries__.string[dbgI]!='\0';dbgI++){
-					printf("	PyId___mro_entries__.string = %c", PyId___mro_entries__.string[dbgI]);
+				printf("	PyId___mro_entries__.string = ");
+				for (int dbgI = 0; PyId___mro_entries__.string[dbgI]!='\0';dbgI++){
+					printf("%c", PyId___mro_entries__.string[dbgI]);
 				}
 				printf("\n");
-				printf("	PyId___mro_entries__.object = 0x%x\n", PyId___mro_entries__.object);
+				printf("	Address of PyId___mro_entries__.object = 0x%x\n", PyId___mro_entries__.object);
 
 				dbgTmp01 = PyId___mro_entries__.object;
 				printf("	PyId___mro_entries__.object.tp_name = ");
-				for (dbgI = 0; (Py_TYPE(dbgTmp01) -> tp_name[dbgI]) != '\0'; dbgI ++){
+				for (int dbgI = 0; (Py_TYPE(dbgTmp01) -> tp_name[dbgI]) != '\0'; dbgI ++){
 					printf("%c", Py_TYPE(dbgTmp01) -> tp_name[dbgI]);
 				}
 				printf("\n");
@@ -2573,7 +2588,7 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
 
 				if(tmp != NULL){
 					printf("	tmp.tp_name = ");
-					for (dbgI = 0; (Py_TYPE(tmp) -> tp_name[dbgI]) != '\0'; dbgI ++){
+					for (int dbgI = 0; (Py_TYPE(tmp) -> tp_name[dbgI]) != '\0'; dbgI ++){
 						printf("%c", Py_TYPE(tmp) -> tp_name[dbgI]);
 					}
 					printf("\n");
@@ -2609,8 +2624,9 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
 			printf("	Address of metatype = 0x%x\n", metatype);
 			nnbases = PyTuple_GET_SIZE(bases);
 	   		 for (int dbgJ = 0; dbgJ < nnbases; dbgJ++) {
-	        	tmpTmp = PyTuple_GET_ITEM(nnbases, dbgJ);
-				printf("	Address of base[%d] = 0x%x\n", dbgJ, tmpTmp);
+	        	tmpTmp = PyTuple_GET_ITEM(bases, dbgJ);
+				printf("	Address of base[%d] = 0x%x, name = ", dbgJ, tmpTmp);
+				wydbg_printName(tmpTmp);
 	   		 }
 //WYDBG IMFORMATION
 		}
@@ -2623,11 +2639,9 @@ type_new(PyTypeObject *metatype, PyObject *args, PyObject *kwds)
 		if(WYDBG_FLAG_TO == 1){
 //WYDBG IMFORMATION		
 			printf("	Address of winner = 0x%x\n", winner);
-			printf("	Name    of winner = ", winner);
-			for (dbgJ = 0; (Py_TYPE(winner) -> tp_name[dbgJ]) != '\0'; dbgJ ++){
-				printf("%c", Py_TYPE(winner) -> tp_name[dbgJ]);
-			}
-			printf("\n----------	Metaclass  ---------\n");
+			printf("	Name    of winner = ");
+			wydbg_printName(winner);
+			printf("----------	Metaclass  ---------\n");
 //WYDBG IMFORMATION
 		}
 		
