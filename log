@@ -1,0 +1,3109 @@
+# class WYDBG(object):
+#         name = 'debug01'
+#         def __init__(self):
+#             print('11111')
+#         def f(self):
+#             print('22222')
+class A(list):
+    def show(self):
+        print("A::show")
+
+class B(list):
+    def show(value):
+        print("B::show")
+
+class C(A):
+    pass
+
+class D(C,B):
+    pass
+
+d = D()
+d.show()
+        
+
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdbec3f78
+        Address of base[0] = 0xdde3dc18, name = ABCMeta
+        Address of winner = 0xdbec3f78
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdbec3f78
+        Address of base[0] = 0xdde3dc18, name = ABCMeta
+        Address of winner = 0xdbec3f78
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b523d50, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x38
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b523d50
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdbec3f78
+        Address of base[0] = 0xdde3b998, name = ABCMeta
+        Address of winner = 0xdbec3f78
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b529dd0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x8, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b529dd0
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b548490, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b548490
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdbec3f78
+        Address of base[0] = 0xdbeffdd8, name = ABCMeta
+        Address of winner = 0xdbec3f78
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b548490, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b548490
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdbec3f78
+        Address of base[0] = 0xdbeffdd8, name = ABCMeta
+        Address of winner = 0xdbec3f78
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = ABCMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : ABCMeta
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b529dd0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x8, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b529dd0
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde6a7d8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x8, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x8, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x8, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b529dd0
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b510770, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x40, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b510770
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c6c0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x370, type->tp_itemsize = 0x28, type->tp_weaklistoffset = 0x180
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b52c6c0
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdde6b4c8
+        Address of base[0] = 0x5b521390, name = type
+        Address of base[1] = 0xdde69ae8, name = EnumMeta
+        Address of winner = 0xdde6b4c8
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b521390
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdde6b4c8
+        Address of base[0] = 0xdde69ae8, name = EnumMeta
+        Address of winner = 0xdde6b4c8
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = EnumMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdde6b4c8
+        Address of base[0] = 0x5b521390, name = type
+        Address of base[1] = 0xdde67418, name = EnumMeta
+        Address of winner = 0xdde6b4c8
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b521390
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b521390, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b521390
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0xdde6b4c8
+        Address of base[0] = 0xdde6a388, name = EnumMeta
+        Address of winner = 0xdde6b4c8
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0xdde6a388
+best_base: name    of candidate = EnumMeta
+best_base: name of the final bestest obj = EnumMeta
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : EnumMeta
+        base->tp_basicsize : 0x30, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : EnumMeta
+        base->tp_basicsize : 0x30, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x28, base->tp_itemsize = 0x4, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x28, type->tp_itemsize = 0x4, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value01 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : EnumMeta
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -----------------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde69698, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9aba8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xddea01e8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9aba8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9aba8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b512fa0, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x50, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b512e00
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde65e88, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde984d8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde984d8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde99eb8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde65e88, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b52c860, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xddea0ed8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9c9d8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde65e88, name = type
+        Address of base[1] = 0xddea0ed8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdbe85ab8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b504450, name = type
+        Address of base[1] = 0xdbe840d8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x40, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b504450
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x5b504650, name = type
+        Address of base[1] = 0xdbe85f08, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b504650
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9d278, name = type
+        Address of base[1] = 0x5b504ee0, name = type
+        Address of base[2] = 0xdbe867a8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x50, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b504ee0
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0xdde9d278, name = type
+        Address of base[1] = 0x5b5051a0, name = type
+        Address of base[2] = 0xdbe86bf8, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------best_base: address of candidate = 0x5b5051a0
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x30, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x28
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b52c860
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+  7           0 LOAD_BUILD_CLASS
+              2 LOAD_CONST               0 (<code object A at 0x000001C7DE5734C0, file "D:\Working\Python-3.7.0a4\study.py", line 7>)
+              4 LOAD_CONST               1 ('A')
+              6 MAKE_FUNCTION            0
+              8 LOAD_CONST               1 ('A')
+             10 LOAD_NAME                0 (list)
+             12 CALL_FUNCTION            3
+             14 STORE_NAME               1 (A)
+
+ 11          16 LOAD_BUILD_CLASS
+             18 LOAD_CONST               2 (<code object B at 0x000001C7DE58F040, file "D:\Working\Python-3.7.0a4\study.py", line 11>)
+             20 LOAD_CONST               3 ('B')
+             22 MAKE_FUNCTION            0
+             24 LOAD_CONST               3 ('B')
+             26 LOAD_NAME                0 (list)
+             28 CALL_FUNCTION            3
+             30 STORE_NAME               2 (B)
+
+ 15          32 LOAD_BUILD_CLASS
+             34 LOAD_CONST               4 (<code object C at 0x000001C7DE58F7C0, file "D:\Working\Python-3.7.0a4\study.py", line 15>)
+             36 LOAD_CONST               5 ('C')
+             38 MAKE_FUNCTION            0
+             40 LOAD_CONST               5 ('C')
+             42 LOAD_NAME                1 (A)
+             44 CALL_FUNCTION            3
+             46 STORE_NAME               3 (C)
+
+ 18          48 LOAD_BUILD_CLASS
+             50 LOAD_CONST               6 (<code object D at 0x000001C7DE58F400, file "D:\Working\Python-3.7.0a4\study.py", line 18>)
+             52 LOAD_CONST               7 ('D')
+             54 MAKE_FUNCTION            0
+             56 LOAD_CONST               7 ('D')
+             58 LOAD_NAME                3 (C)
+             60 LOAD_NAME                2 (B)
+             62 CALL_FUNCTION            4
+             64 STORE_NAME               4 (D)
+
+ 21          66 LOAD_NAME                4 (D)
+             68 CALL_FUNCTION            0
+             70 STORE_NAME               5 (d)
+
+ 22          72 LOAD_NAME                5 (d)
+             74 LOAD_METHOD              6 (show)
+             76 CALL_METHOD              0
+             78 POP_TOP
+             80 LOAD_CONST               8 (None)
+             82 RETURN_VALUE
+
+Disassembly of <code object A at 0x000001C7DE5734C0, file "D:\Working\Python-3.7.0a4\study.py", line 7>:
+  7           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('A')
+              6 STORE_NAME               2 (__qualname__)
+
+  8           8 LOAD_CONST               1 (<code object show at 0x000001C7DE588DC0, file "D:\Working\Python-3.7.0a4\study.py", line 8>)
+             10 LOAD_CONST               2 ('A.show')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (show)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object show at 0x000001C7DE588DC0, file "D:\Working\Python-3.7.0a4\study.py", line 8>:
+  9           0 LOAD_GLOBAL              0 (print)
+              2 LOAD_CONST               1 ('A::show')
+              4 CALL_FUNCTION            1
+              6 POP_TOP
+              8 LOAD_CONST               0 (None)
+             10 RETURN_VALUE
+
+Disassembly of <code object B at 0x000001C7DE58F040, file "D:\Working\Python-3.7.0a4\study.py", line 11>:
+ 11           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('B')
+              6 STORE_NAME               2 (__qualname__)
+
+ 12           8 LOAD_CONST               1 (<code object show at 0x000001C7DE58F280, file "D:\Working\Python-3.7.0a4\study.py", line 12>)
+             10 LOAD_CONST               2 ('B.show')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (show)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object show at 0x000001C7DE58F280, file "D:\Working\Python-3.7.0a4\study.py", line 12>:
+ 13           0 LOAD_GLOBAL              0 (print)
+              2 LOAD_CONST               1 ('B::show')
+              4 CALL_FUNCTION            1
+              6 POP_TOP
+              8 LOAD_CONST               0 (None)
+             10 RETURN_VALUE
+
+Disassembly of <code object C at 0x000001C7DE58F7C0, file "D:\Working\Python-3.7.0a4\study.py", line 15>:
+ 15           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('C')
+              6 STORE_NAME               2 (__qualname__)
+
+ 16           8 LOAD_CONST               1 (None)
+             10 RETURN_VALUE
+
+Disassembly of <code object D at 0x000001C7DE58F400, file "D:\Working\Python-3.7.0a4\study.py", line 18>:
+ 18           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('D')
+              6 STORE_NAME               2 (__qualname__)
+
+ 19           8 LOAD_CONST               1 (None)
+             10 RETURN_VALUE
+
+
+Python 3.7.0a4 (default, Jan 23 2018, 22:46:05) [MSC v.1912 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> class A(list):
+...     def show(self):
+...         print("A::show")
+...
+>>> class B(list):
+...     def show(value):
+...         print("B::show")
+...
+>>> class C(A):
+...     pass
+...
+>>> class WYDBG(C,B):
+...     pass
+...
+length of args = 3
+class of item[0] is UNICODE,  address = 0x986d9cd8, value = WYDBG
+class of item[1] is TUPLE, address = 0x986db2f8, the name of Item is: type      type
+class of item[2] is DICT , address = 0x9697ac10, key:
+                key[0] : __module__
+                key[1] : __qualname__
+--------------- vgetargs1_impl ---------------
+    after while loop 1, level = 0, max =3, min = -1, nargs = 3, compat = 0x0
+    address of stack[0] = 0x986d9cd8, format = U
+    address of stack[1] = 0x986db2f8, format = O
+    address of stack[2] = 0x9697ac10, format = O
+--------------- vgetargs1_impl ---------------
+----------PyId___mro_entries__ initialize---------
+Address of PyId___mro_entries__.next = 0x0
+PyId___mro_entries__.string = __mro_entries__
+Address of PyId___mro_entries__.object = 0x0
+----------PyId___mro_entries__ initialize---------
+Can run to here!
+----------  Metaclass  ---------
+        Address of metatype = 0x5b52c6c0
+        Address of base[0] = 0x967c3be8, name = type
+        Address of base[1] = 0x967c3798, name = type
+        Address of winner = 0x5b52c6c0
+        Name    of winner = type
+----------      Metaclass  ---------
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x38, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x40
+        name of base : type
+        base->tp_basicsize : 0x38, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x40
+        name of base : type
+        base->tp_basicsize : 0x38, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b520440
+best_base: name    of candidate = type
+------- extra_ivars -------     name of type : type
+        type->tp_basicsize : 0x20, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x38, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x0
+        name of base : type
+        base->tp_basicsize : 0x20, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x1
+------- extra_ivars -------------- extra_ivars -------  name of type : type
+        type->tp_basicsize : 0x48, type->tp_itemsize = 0x0, type->tp_weaklistoffset = 0x40
+        name of base : type
+        base->tp_basicsize : 0x38, base->tp_itemsize = 0x0, base->tp_weaklistoffset = 0x0
+        sizeof(PyObject *) = 0x8
+        extra_ivars return value02 = 0x0
+------- extra_ivars -------best_base: address of candidate = 0x5b520440
+best_base: name    of candidate = type
+best_base: name of the final bestest obj = type
+>>> d = WYDBG()
+>>> d.show()
