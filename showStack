@@ -1,0 +1,123 @@
+static void showRunningStack(PyObject **, PyObject **, PyFrameObject);
+
+void showRunningStack(PyObject **stackNow, PyObject **stackBottom, PyFrameObject *f)
+{
+	//PyObject **stack_pointer;
+	//PyObject **f_valuestack;
+	long mFlag;
+	PyObject *mItem;
+	PyObject **mStackBottom = stackBottom;
+	PyObject **stackShow = stackNow;
+	char *nameCode = "code";
+	char *nameFunc = "function";
+	PyFrameObject *mFrame = f;
+
+	printf("-------  FrameInfoStart  --------\n");
+	
+	printf("Frame     addr = 0x%x, co_name = ", (long)mFrame);
+	char *mStrF = PyUnicode_AS_UNICODE(mFrame->f_code->co_name);
+	for (int i=0; i < PyUnicode_GET_SIZE(mFrame->f_code->co_name); i++){
+		printf("%c", mStrF[i]);
+	}
+	printf("\n");
+
+	printf("FrameBack addr = 0x%x, co_name = ", (long)(mFrame->f_back));
+	if(*(mFrame->f_back) != NULL){
+		char *mStrF2 = PyUnicode_AS_UNICODE(mFrame->f_back->f_code->co_name);
+		for (int i=0; i < PyUnicode_GET_SIZE(mFrame->f_back->f_code->co_name); i++){
+			printf("%c", mStrF2[i]);
+		}
+		printf("\n");
+	}
+	else{
+		printf("FrameBack is NULL\n");
+
+	}
+	printf("-------  FrameInfoEnd    --------\n");
+	
+	if((stackShow <= mStackBottom) || ((stackShow - 1) <= mStackBottom)){
+		printf("    +-------------+\n");
+		printf("    |    NULL     |    stackNow( 0x%x ) == stackBottom( 0x%x )\n", (long)stackShow, (long)mStackBottom);
+		printf("    +-------------+\n");
+		return;
+	}
+	
+	while(stackShow > mStackBottom){
+		mItem = *(stackShow - 1);
+		mFlag = Py_TYPE(mItem) ->tp_flags;
+	
+		printf("    +-------------+\n");
+
+		if (mFlag & Py_TPFLAGS_LONG_SUBCLASS) {
+			printf("    |    LONG     |    stack = 0x%x, address = 0x%x, value = 0x%x\n", (long)stackShow, (long)(mItem), PyLong_AsLong(mItem));
+		}
+		else if (mFlag & Py_TPFLAGS_TUPLE_SUBCLASS) {
+			printf("    |    TUPLE    |    stack = 0x%x, address = 0x%x, the name of Item is: ", (long)stackShow, (long)(mItem));
+			for (int i=0; i < PyTuple_GET_SIZE(mItem); i++) {
+				PyObject *mItem2 = PyTuple_GetItem(mItem, i);
+				for (int j=0; (Py_TYPE(mItem2)->tp_name[j]) != '\0'; j++)
+				{
+					printf("%c", Py_TYPE(mItem2) ->tp_name[j]);
+				}
+				printf(";   ");
+			}
+			printf("\n");
+		}
+		else if (mFlag & Py_TPFLAGS_UNICODE_SUBCLASS) {
+			printf("    |    UNICODE  |    stack = 0x%x, address = 0x%x, value = ", (long)stackShow, (int)(mItem));
+			char *mStr = PyUnicode_AS_UNICODE(mItem);
+			for (int i=0; i < PyUnicode_GET_SIZE(mItem); i++) {
+				printf("%c", mStr[i]);
+			}
+			printf("\n");
+		}
+		else if (mFlag & Py_TPFLAGS_DICT_SUBCLASS) {
+			printf("    |    DICT     |    stack = 0x%x, address = 0x%x, ", (long)stackShow, (int)(mItem));
+			PyListObject *mList = PyDict_Keys(mItem);
+			for (int i=0; i < PyList_Size(mList); i++) {
+				PyObject *mItem2 = PyList_GetItem(mList, i);
+				if(!PyUnicode_Check(mItem2)){
+					printf("key[%d] is nonUnic;   ", i);
+				}
+				else {
+					printf("key[%d] : ", i);
+					char *mStr = PyUnicode_AS_UNICODE(mItem2);
+					for (int j=0; j < PyUnicode_GET_SIZE(mItem2); j++){
+						printf("%c", mStr[j]);
+					}
+					printf(";   ");
+				}
+			}
+			printf("\n");
+		}
+		else if (strcmp(Py_TYPE(mItem)->tp_name, nameCode) == 0){
+			printf("    |    CODE     |    stack = 0x%x, address = 0x%x, name = ", (long)stackShow, (int)(mItem));
+			char *mStr = PyUnicode_AS_UNICODE(((PyUnicodeObject *)mItem)->co_name);
+			for (int i=0; i < PyUnicode_GET_SIZE(((PyUnicodeObject *)mItem)->co_name); i++){
+				printf("%c", mStr[i]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(Py_TYPE(mItem)->tp_name, nameFunc) == 0){
+			printf("    |    FUNC     |    stack = 0x%x, address = 0x%x, name = ", (long)stackShow, (int)(mItem));
+			char *mStr = PyUnicode_AS_UNICODE(((PyUnicodeObject *)mItem)->func_name);
+			for (int i=0; i < PyUnicode_GET_SIZE(((PyUnicodeObject *)mItem)->func_name); i++){
+				printf("%c", mStr[i]);
+			}
+			printf(";   qualname = ");
+			char *mStr2 = PyUnicode_AS_UNICODE(((PyUnicodeObject *)mItem)->func_qualname);
+			for (int j=0; j < PyUnicode_GET_SIZE(((PyUnicodeObject *)mItem)->func_qualname); j++){
+				printf("%c", mStr2[j]);
+			}			
+			printf("\n");
+		}
+		else {
+			printf("    |    UNKWON   |    stack = 0x%x, address = 0x%x, tp_flags = %x, name = ", (long)stackShow, (int)(mItem), mFlag);
+			for(int i=0;(Py_TYPE(mItem)->tp_name[i])!='\0';i++){
+				printf("%c", Py_TYPE(mItem)->tp_name[i]);
+			}
+			printf("\n");
+		}
+	}
+	printf("    +-------------+\n");
+}
