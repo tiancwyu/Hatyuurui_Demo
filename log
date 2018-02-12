@@ -1,3 +1,77 @@
+class A(dict):
+    def show(self):
+        print("A::show")
+
+class B(list):
+    def show(value):
+        print("B::show")
+
+class C(A):
+    pass
+
+class WYDBG(C,B):
+    name = 10
+    def f(self):
+        print('22222')
+
+# class WYDBG(object):
+#     name = 'Python'
+#     def __init__(self):
+#         print('A::__init__')
+#     def f(self):
+#         print('A::f')
+#     def g(self, aValue):
+#         self.value = aValue
+#         print(self.value)
+
+        
+
+# class WYDBG(list):
+#         name = 'debug01'
+#         WyTemp = 10
+#         def __init__(self):
+#             print('11111')
+#         def f(self):
+#             print('22222')
+
+# class A(list):
+#     def show(self):
+#         print("A::show")
+
+# class B(list):
+#     def show(value):
+#         print("B::show")
+
+# class C(A):
+#     pass
+
+# class WYDBG(C,B):
+#     WyTemp = 10
+#     def f(self):
+#         print('22222')
+
+# d = WYDBG()
+# d.show()
+        
+
+# import sys
+
+# class A(list):
+#     def show(self):
+#         frame = sys._getframe()
+#         print("A::show")
+#         print(frame.f_builtins)
+#         print(frame.f_locals)
+#         print(frame.f_globals)
+
+# a=A()
+# a.show()
+
+
+
+
+
+
 # class WYDBG(object):
 #         name = 'debug01'
 #         def __init__(self):
