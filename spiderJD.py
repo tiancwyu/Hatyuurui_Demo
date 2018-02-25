@@ -77,6 +77,32 @@ class spiderJD(object):
         print("The Work is Done!")
 
 if __name__ == '__main__':
-    a = spiderJD();
-    a.run('http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_14073&delivery_glb=1&sort=sort_totalsales15_desc&trans=1&debug=cluster&JL=3_%E5%93%81%E7%89%8C_%E6%99%AE%E8%81%94%EF%BC%88TP-LINK%EF%BC%89#J_crumbsBar')
+    # a = spiderJD();
+    # a.run('http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_14073&delivery_glb=1&sort=sort_totalsales15_desc&trans=1&debug=cluster&JL=3_%E5%93%81%E7%89%8C_%E6%99%AE%E8%81%94%EF%BC%88TP-LINK%EF%BC%89#J_crumbsBar')
+    list1 = ['TP-LINK TL-WR890N千兆版 450M无线路由器（全金属机身） 光纤宽带穿墙千兆有线端口:670000',
+            'NULL TL-WDR7300千兆版 2100M 11AC双频无线路由器 千兆有线端口 光纤宽带WIFI穿墙:430000',
+            'HUAWEI TL-WDR8610 2600M 11AC双频千兆无线路由器 千兆有线端口 板阵天线智能路由 上门安装套装:9600',
+            'aaa TP-LINK TL-AP302C-PoE 300M企业级无线吸顶式AP 无线wifi接入点:22000',
+            'NULL TL-AP451C 450M企业级无线吸顶式AP 无线wifi接入点:22000'
+            ]
 
+    list2 = []
+    for title in list1:
+        try:
+            i = title.index('TP-LINK')
+            titleL = list(title)
+            titleL.insert(i+7,':')
+            newS = ''.join(titleL)
+            list2.append(newS)
+            continue
+        except Exception as e:
+            print(repr(e))
+        try:
+            i = title.index('HUAWEI')
+            titleL = list(title)
+            titleL.insert(i+6,':')
+            newS = ''.join(titleL)
+            list2.append(newS)
+        except Exception as e:
+            pass
+    print(list2)
