@@ -19,7 +19,7 @@ class spiderJD(object):
 
     def getContent(self, url):
         try:
-            r = requests.get(url= url, headers= self.HEADER, proxies= self.PROXIES, timeout= self.TIME_OUT)
+            r = requests.get(url= url, headers= self.HEADER, timeout= self.TIME_OUT)
             # print('Chardet Encoding: %s' %(chardet.detect(r.content)['encoding']))
             r.encoding = chardet.detect(r.content)['encoding']
             # print('response of %s is: %s' %(url, r.status_code))
@@ -53,56 +53,48 @@ class spiderJD(object):
         maxPage = re.findall(patMaxPage, resPage)
         patId = re.compile(r'.*?j-sku-item" data-sku="(.*?)"', re.S)
         id1 = re.findall(patId, resPage)
-        for x in range(2, (int(maxPage[0][2]) + 1)):
-            strUrl = "http://list.jd.com" + maxPage[0][0] + str(x) + maxPage[0][1]
-            print(strUrl)
-            resId = self.getContent(strUrl)
-            id1 = id1 + re.findall(patId, resId)
-        id2 = list(set(id1))
-        return id2
+        if(maxPage != []):
+            for x in range(2, (int(maxPage[0][2]) + 1)):
+                strUrl = "http://list.jd.com" + maxPage[0][0] + str(x) + maxPage[0][1]
+                print(strUrl)
+                resId = self.getContent(strUrl)
+                id1 = id1 + re.findall(patId, resId)
+            id2 = list(set(id1))
+            return id2
+        else:
+            return id1
 
-    def run(self, urlPage):
+    def run(self, brand, urlPage):
         fo = open("foo.txt", "w", encoding='utf-8')
         listId = self.getUrl(urlPage)
         for id in listId:
             num = self.parseNum(id)
             if num != None:
-                try:
-                    fo.write(num)
-                    fo.write("\n")
-                except Exception as e:
-                    print('ERROR OCCUR!! When write files, id: %s' %(id))
-                    print(repr(e))
+                flag = 0
+                for b in brand:
+                    try:
+                        i = num.index(b)
+                        numL = list(num)
+                        numL.insert(i+len(b),':')
+                        num = ''.join(numL)
+                        flag = 1
+                    except Exception as e:
+                        pass
+                    if(flag == 1):
+                        break
+                if flag == 1:
+                    try:
+                        fo.write(num)
+                        fo.write("\n")
+                    except Exception as e:
+                        print('ERROR OCCUR!! When write files, id: %s' %(id))
+                        print(repr(e))
+                else:
+                    print(num)
         fo.close()
         print("The Work is Done!")
 
 if __name__ == '__main__':
-    # a = spiderJD();
-    # a.run('http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_14073&delivery_glb=1&sort=sort_totalsales15_desc&trans=1&debug=cluster&JL=3_%E5%93%81%E7%89%8C_%E6%99%AE%E8%81%94%EF%BC%88TP-LINK%EF%BC%89#J_crumbsBar')
-    list1 = ['TP-LINK TL-WR890N千兆版 450M无线路由器（全金属机身） 光纤宽带穿墙千兆有线端口:670000',
-            'NULL TL-WDR7300千兆版 2100M 11AC双频无线路由器 千兆有线端口 光纤宽带WIFI穿墙:430000',
-            'HUAWEI TL-WDR8610 2600M 11AC双频千兆无线路由器 千兆有线端口 板阵天线智能路由 上门安装套装:9600',
-            'aaa TP-LINK TL-AP302C-PoE 300M企业级无线吸顶式AP 无线wifi接入点:22000',
-            'NULL TL-AP451C 450M企业级无线吸顶式AP 无线wifi接入点:22000'
-            ]
-
-    list2 = []
-    for title in list1:
-        try:
-            i = title.index('TP-LINK')
-            titleL = list(title)
-            titleL.insert(i+7,':')
-            newS = ''.join(titleL)
-            list2.append(newS)
-            continue
-        except Exception as e:
-            print(repr(e))
-        try:
-            i = title.index('HUAWEI')
-            titleL = list(title)
-            titleL.insert(i+6,':')
-            newS = ''.join(titleL)
-            list2.append(newS)
-        except Exception as e:
-            pass
-    print(list2)
+    a = spiderJD();
+    list22 = ['腾达']
+    a.run(list22, 'http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_16790&page=1&delivery=1&sort=sort_totalsales15_desc&trans=1&JL=4_10_0#J_main')
