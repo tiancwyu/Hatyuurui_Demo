@@ -4,6 +4,7 @@ __author__ = 'tiancwyu'
 import requests
 import chardet
 import re
+from time import time
 
 class spiderJD(object):
     """爬去京东商品评论数"""
@@ -19,10 +20,8 @@ class spiderJD(object):
 
     def getContent(self, url):
         try:
-            r = requests.get(url= url, headers= self.HEADER, timeout= self.TIME_OUT)
-            # print('Chardet Encoding: %s' %(chardet.detect(r.content)['encoding']))
+            r = requests.get(url= url, headers= self.HEADER, proxies= self.PROXIES, timeout= self.TIME_OUT)
             r.encoding = chardet.detect(r.content)['encoding']
-            # print('response of %s is: %s' %(url, r.status_code))
             if not r.ok:
                 print(r.status_code)
                 raise ConnectionError
@@ -45,7 +44,36 @@ class spiderJD(object):
             print(idP)
             print(data)
             return None
-        # print(strNum)
+
+    def getNumDetil(self, idD, name):
+        """为节约时间、流量，仅判断评论数>50000的商品并仅分析前50页"""
+        # fo = open("foo1.txt", "w", encoding='utf-8')
+        rate = 0
+        patD = re.compile(r'.*?nickname":"(.*?)".*?productColor":"(.*?)"', re.S)
+        # patD = re.compile(r'.*?nickname":"(.{0,20})".{0,30}productColor":"(.{0,40})"', re.S)
+        for i in range(0,51):
+            if((i%10) == 0):
+                print('Current Progress: %d' %(i))
+            comment_url = "http://club.jd.com/comment/productPageComments.action?callback=fetchJSON_comment98vv242544&productId=" + idD + "&score=0&sortType=5&page=" + str(i) + "&pageSize=10&isShadowSku=0&fold=1"
+            resD = self.getContent(comment_url)
+            numD = re.findall(patD, resD)
+            # try:
+            #     for m in numD:
+            #         numS = m[0] + ':' + m[1]
+            #         fo.write(numS)
+            #         fo.write("\n")
+            # except Exception as e:
+            #     print('ERROR OCCUR!! When write files, page: %d' %(i))
+            #     print(repr(e))
+            try:
+                for l in numD:
+                    if(l[1] == name):
+                        rate = rate + 1
+            except Exception as e:
+                pass
+        # fo.close()
+        print('Work Done, Totle num = %d' %(rate))
+
 
     def getUrl(self, url):
         resPage = self.getContent(url)
@@ -96,5 +124,7 @@ class spiderJD(object):
 
 if __name__ == '__main__':
     a = spiderJD();
-    list22 = ['腾达']
-    a.run(list22, 'http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_16790&page=1&delivery=1&sort=sort_totalsales15_desc&trans=1&JL=4_10_0#J_main')
+    # list22 = ['腾达']
+    # a.run(list22, 'http://list.jd.com/list.html?cat=670,592,700&ev=exbrand_16790&page=1&delivery=1&sort=sort_totalsales15_desc&trans=1&JL=4_10_0#J_main')
+    a.getNumDetil('4574935', '【金属机身】1200M')
+ 
