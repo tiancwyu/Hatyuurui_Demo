@@ -1,0 +1,143 @@
+__author__ = 'tiancwyu'
+# -*- coding:utf-8 -*-
+import requests
+import re
+import pdfkit
+from lxml import etree
+import chardet
+
+# pdfkit.from_url('E:/Java基础01 从HelloWorld到面向对象 - Vamei - 博客园.html', 'E:/out.pdf')
+
+html_template = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{content}
+</body>
+</html>
+"""
+
+class LXFJC():
+    # PROXIES    = {'http' : 'http://fxsl01872:qazwsx123@13.187.24.60:8000/'}
+    USER_AGENT = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+    HEADERS    = { 'User-Agent' : USER_AGENT }
+    FFILE_PATH = 'E:/liao.pdf'
+
+    def __init__(self):
+        pass
+
+    def getContent(self, url):
+        try:
+            content = requests.get(url, headers= self.HEADERS)
+            content.encoding = chardet.detect(content.content)['encoding']
+            return etree.HTML(content.text)
+        except Exception as e:
+            if hasattr(e, 'reason'):
+                print('页面获取失败，错误原因：', e.reason)
+            else:
+                raise e
+            return None
+
+    def getArticleDetail(self, url):
+        content = self.getContent(url)
+        if content is not None:
+            # 提取文章标题
+            title   = content.xpath('//*[@id="main"]/div[3]/div[2]/div/div[2]/div[2]/h4')[0].text
+            # 抓取正文内容
+            body    = content.xpath('//*[@id="main"]/div[3]/div[2]/div/div[2]/div[2]/div[2]')[0]
+            # body中的img标签的src相对路径的改成绝对路径，并居中
+            imgTagList  = body.xpath('.//img')
+            for imgTag in imgTagList:
+                if not 'http' in imgTag.get('src'):
+                    imgTag.set('src','http://www.liaoxuefeng.com' + imgTag.get('src'))
+                etree.SubElement(imgTag.getparent(), "center").insert(0,imgTag)
+            # 删除视屏链接
+            videoTagList = body.xpath('.//video')
+            for videoTag in videoTagList:
+                videoTag.getparent().remove(videoTag)
+            # 加入标题, 居中显示
+            h1Tag = etree.Element('h1')
+            etree.SubElement(h1Tag, "center").text = title
+            # 在center_tag内容的最前方（标签<center>之后，插入一个新的tag）
+            body.insert(0,h1Tag)
+            # 每篇文章间插入两个空行已作分隔
+            etree.SubElement(body, "br")
+            etree.SubElement(body, "br")
+            # html  = etree.tostring(body, encoding="utf-8", pretty_print=True, method="html")
+            # 将body插入html模板之中
+            # html = html.decode('utf-8')
+            # html  = html_template.format(content = str(html))
+            # html = html.encode('utf-8')
+            return body
+        else:
+            print('Get Article fail,Url is %s' %(url))
+            return None
+
+    def getUrlList(self, firstUrl):
+        content = self.getContent(firstUrl)
+        if content is not None:
+            liTag    = content.xpath('//*[@id="main"]/div[3]/div[2]/div/div[1]/div[2]/ul[2]/li')
+            urlList  = []
+            for li in liTag:
+                href = li.xpath('.//a/@href')
+                url  = 'http://www.liaoxuefeng.com' + href[0]
+                urlList.append(url)
+            return urlList
+        else:
+            print('Can not get content of %s!!!' %(firstUrl))
+
+    def savePdf(self):
+        options = {
+            'page-size': 'A4',
+            'margin-top': '0.5in',
+            'margin-right': '0.5in',
+            'margin-bottom': '0.5in',
+            'margin-left': '0.5in',
+            'encoding': "UTF-8",
+            'footer-center':"[page] / [topage]",
+            'footer-spacing':"1",
+            'footer-font-size':"8",
+            'custom-header': [
+                ('Accept-Encoding', 'gzip')
+            ],
+            'cookie': [
+                ('cookie-name1', 'cookie-value1'),
+                ('cookie-name2', 'cookie-value2'),
+            ],
+            'outline-depth': 10,
+        }
+        css = ['itranswarp.css','highlight.css']
+
+        pdfkit.from_file('porxieslist.html', self.FFILE_PATH, options=options, css= css)
+
+    def bondHtmls(self, htmls):
+        divTag = etree.Element('div')
+        for html in htmls:
+            divTag.append(html)
+        html  = etree.tostring(divTag, encoding="utf-8", pretty_print=True, method="html")
+        html = html.decode('utf-8')
+        # 将body插入html模板之中
+        html  = html_template.format(content = html)
+        f = open('porxieslist.html', 'w', encoding = 'utf-8')
+        f.write(html)
+        f.close
+
+    def start(self, firstUrl):
+        # urlList = self.getUrlList(firstUrl)
+        # if urlList is not None:
+        #     htmls = []
+        #     for url in urlList:
+        #         htmls.append(self.getArticleDetail(url))
+        #     self.bondHtmls(htmls)
+
+        #     self.savePdf()
+        # else:
+        #     print('Get Ure List fail!!!')
+        self.savePdf()
+
+
+lxf = LXFJC()
+lxf.start('http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000')
