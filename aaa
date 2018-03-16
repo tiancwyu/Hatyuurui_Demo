@@ -60,3 +60,82 @@ code object person：
 ('print',)
 >>> person.__code__.co_varnames
 ('name', 'age', 'city', 'job', 'arg', 'kw')
+
+
+
+
+函数的创建：
+  1           0 LOAD_CONST               0 ('city')
+              3 LOAD_CONST               1 ('Nanjing')
+              6 LOAD_CONST               2 (<code object person at 0x00A81930, f
+ile "D:\Project\Python-3.7.0a4\study.py", line 1>)
+              9 LOAD_CONST               3 ('person')
+             12 MAKE_FUNCTION          256
+             15 STORE_NAME               0 (person)
+
+完成全部LOAD_CONST后，运行时栈为： 	+--------------------------------+
+										|       'city'         |
+										+--------------------------------+
+										|       ' Nanjing '     |
+										+--------------------------------+
+										|  code object person  |
+										+--------------------------------+
+										|       'person'      |
+								    	+--------------------------------+
+										|                    |
+										+--------------------------------+
+
+STORE_NAME   完成后			: 		+--------------------------------+
+										|       'city'         |
+										+--------------------------------+
+										|       ' Nanjing '     |
+								    	+--------------------------------+
+										|                    |
+										+--------------------------------+
+MAKE_FUNCTION中创建的FunctionObject：Preson被存入了co_names 中的person中
+
+函数的调用：
+  5          36 LOAD_NAME                0 (person)
+             39 LOAD_CONST               8 ('Jack')
+             42 LOAD_CONST               9 (24)
+             45 LOAD_CONST              10 (11)
+             48 LOAD_CONST              11 (22)
+             51 LOAD_CONST              12 ('job')
+             54 LOAD_CONST              13 ('Engineer')
+             57 LOAD_NAME                1 (kw)
+             60 CALL_FUNCTION_KW       260 (4 positional, 1 keyword pair)
+             63 POP_TOP
+             64 LOAD_CONST              14 (None)
+             67 RETURN_VALUE
+
+
+
+
+
+
+执行到CALL_FUNCTION_KW时，运行时栈为：
+ 	+--------------------------------+
+										|       'city'         |
+										+--------------------------------+
+										|       ' Nanjing '     |
+										+--------------------------------+
+										|  func object person   |
+										+--------------------------------+
+										|       'Jack'         |
+								     	+--------------------------------+
+										|          24        |
+										+--------------------------------+
+										|          11        |
+										+--------------------------------+
+										|          22        |
+										+--------------------------------+
+										|        'job'        |
+										+--------------------------------+
+										|     'Engineer'       |
+										+--------------------------------+
+										|           kw       |
+										+--------------------------------+
+										|                    |
+										+--------------------------------+
+???    kw  貌似不是Tuple
+
