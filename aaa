@@ -139,3 +139,58 @@ MAKE_FUNCTION中创建的FunctionObject：Preson被存入了co_names 中的perso
 										+--------------------------------+
 ???    kw  貌似不是Tuple
 
+
+
+  1           0 LOAD_CONST               0 ('Nanjing')
+              2 LOAD_CONST               1 (('city',))
+              4 BUILD_CONST_KEY_MAP      1
+              6 LOAD_CONST               2 (<code object person at 0x00000218FF5F3C40, file "D:\Working\Python-3.7.0a4\study.py", line 1>)
+              8 LOAD_CONST               3 ('person')
+             10 MAKE_FUNCTION            2
+             12 STORE_NAME               0 (person)
+
+  4          14 LOAD_CONST               4 (99)
+             16 LOAD_CONST               5 ('#')
+             18 LOAD_CONST               6 (('d', 'x'))
+             20 BUILD_CONST_KEY_MAP      2
+             22 STORE_NAME               1 (kw)
+
+  5          24 LOAD_NAME                0 (person)
+             26 LOAD_CONST              14 (('Jack', 24, 11, 22))
+             28 LOAD_CONST              11 ('job')
+             30 LOAD_CONST              12 ('Engineer')
+             32 BUILD_MAP                1
+             34 LOAD_NAME                1 (kw)
+             36 BUILD_MAP_UNPACK_WITH_CALL     2
+             38 CALL_FUNCTION_EX         1
+             40 POP_TOP
+             42 LOAD_CONST              13 (None)
+             44 RETURN_VALUE
+
+Disassembly of <code object person at 0x00000218FF5F3C40, file "D:\Working\Python-3.7.0a4\study.py", line 1>:
+  2           0 LOAD_GLOBAL              0 (print)
+              2 LOAD_FAST                0 (name)
+              4 LOAD_FAST                1 (age)
+              6 LOAD_FAST                2 (city)
+              8 LOAD_FAST                3 (job)
+             10 LOAD_CONST               1 ('arg =')
+             12 LOAD_FAST                4 (arg)
+             14 LOAD_CONST               2 ('kw =')
+             16 LOAD_FAST                5 (kw)
+             18 CALL_FUNCTION            8
+             20 POP_TOP
+             22 LOAD_CONST               0 (None)
+             24 RETURN_VALUE
+>>> co.co_consts
+('Nanjing', ('city',), <code object person at 0x00000218FF5F3C40, file "D:\Working\Python-3.7.0a4\study.py", line 1>, 'person', 99, '#', ('d', 'x'), 'Jack', 24, 11, 22, 'job', 'Engineer', None, ('Jack', 24, 11, 22))
+>>> co.co_names
+('person', 'kw')
+>>> co.co_argcount
+0
+>>> co.co_kwonlyargcount
+0
+>>> co.co_varnames
+()
+
+CALL_FUNCTION_KW's oparg: 0d1    |    DICT     |    address = 0x62d13850, key[0] : job;   key[1] : d;   key[2] : x;
+Jack 24 Nanjing Engineer arg = (11, 22) kw = {'d': 99, 'x': '#'}
