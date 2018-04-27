@@ -1,3 +1,15 @@
+import importlib
+import sys
+
+del(sys.meta_path[3])
+sys.meta_path.append(importlib._bootstrap_external.PathFinder)
+sys.path_importer_cache['C:\\Users\\fxsl01872\\AppData\\Local\\Programs\\Python\\Python35-32\\lib\\site-packages'] = importlib._bootstrap_external.FileFinder.path_hook(*importlib._bootstrap_external._get_supported_file_loaders())('C:\\Users\\fxsl01872\\AppData\\Local\\Programs\\Python\\Python35-32\\lib\\site-packages')
+
+importlib.__import__('wwwwww')
+
+
+
+
 函数传参测试方案：
 def person(name, age, *arg, city = 'Nanjing', job, **kw):
     print(name, age, city, job, 'arg =', arg, 'kw =', kw)
