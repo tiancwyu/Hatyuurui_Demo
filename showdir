@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#a test for traverse directory
+
+__author__ = 'AlbertS'
+
+import os
+import os.path
+from bs4 import UnicodeDammit
+import chardet
+
+
+
+def dfs_showdir(path, depth, mFile):
+    if depth == 0:
+        # print("root:[" + path + "]")
+        mFile.write("root:[" + path + "]" + '\n')
+    # for item in os.listdir(path):
+    #     if 'BDMV' in item or 'CERTIFICATE' in item or 'bdmv' in item or 'certificate' in item:
+    #         return
+
+    for item in os.listdir(path):
+        isCur = False
+        # if(item.find(u'\xa0 ') != -1):
+        #     item = item.replace(u'\xa0 ', u' ')
+        #     print(item)
+
+        if '.git' not in item and 'System Volume Information' not in item and 'RECYCLE.BIN' not in item and 'showdir.py' not in item:
+            newitem = path +'/'+ item
+            if os.path.isdir(newitem):
+                for item2 in os.listdir(newitem):
+                    if 'BDMV' in item2 or 'CERTIFICATE' in item2 or 'bdmv' in item2 or 'certificate' in item2:
+                        isCur = True
+                        break
+
+            if isCur == True:
+                sizeC = 0
+                for root , dirs, files in os.walk(newitem, True):
+                    sizeC += sum([os.path.getsize(os.path.join(root, name)) for name in files])
+                sizeC = ((sizeC/1024)/1024)/1024
+                # print("|      " * depth + "+-- " + item + ' ' + str("%.2f"%sizeC) + 'GB')
+                mFile.write("|      " * depth + "+-- " + item + ' ' + str("%.2f"%sizeC) + 'GB' + '\n')
+            elif '.iso' not in item and '.ISO' not in item:
+                # print("|      " * depth + "+-- " + item)
+                mFile.write("|      " * depth + "+-- " + item + '\n')
+            else:
+                size = os.path.getsize(path + '/' + item)
+                size = ((size/1024)/1024)/1024
+                # print("|      " * depth + "+-- " + item + ' ' + str("%.2f"%size) + 'GB')
+                mFile.write("|      " * depth + "+-- " + item + ' ' + str("%.2f"%size) + 'GB' + '\n')
+
+            if os.path.isdir(newitem) and isCur != True:
+                dfs_showdir(newitem, depth +1, mFile)
+
+if __name__ == '__main__':
+    f=open(r"D:\111.txt",'w',encoding='utf-8')
+    dfs_showdir('.', 0, f)
+    # dfs_showdir('D:\Working\cache', 0, f)
+    print('List Successful!')
+    f.close()
