@@ -1,0 +1,126 @@
+# coding:utf-8
+import requests
+import pymysql
+import os
+import re
+
+headers = {
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'Referer': 'http://passport.cnblogs.com/user/signin',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36',
+    'Cookie': '__gads=ID=fc58354935efbd89:T=1458638388:S=ALNI_MYEtsucyem4nWeL9mdxvQmfAZlTgQ; _ga=GA1.2.111229817.1458781632; .CNBlogsCookie=39EB7C846FF5A6CA5D762D210B954E55CE77A24D11C5203F6055DCAC93DFFF8EA7E405568F2D8CC9F00AFE43A859E71DE55AE6E79A030F7E74C231CECF7DA2DD88B734EA2ECA22DFED8C2ECAB85717B45434AABFE1202DA8266C7440562114D99D9C6767'
+}
+
+login_data = {'input1': '你的用户名加密后内容',
+              'input2': '你的密码加密后内容',
+              'remember': 'false'
+              }
+
+class Spider(object):
+    """docstring for Spider"""
+    def __init__(self, arg):
+        self.arg = arg
+
+        # Session对象能够帮我们跨请求保持某些参数，也会在同一个session实例发出的所有请求之间保持cookies
+        self.s = requests.Session()
+
+    def analogPlugin(self, url):
+        pass
+
+    def getContent(self, url):
+        pass
+
+
+if __name__ == "__main__":
+    nameNone = []
+    
+    #将CookieJar转为字典：
+    # cookies = requests.utils.dict_from_cookiejar(r.cookies)
+
+    #将字典转为CookieJar：
+    # cookies = requests.utils.cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True)
+    
+    # 将cookies 传入到session中
+    # s.cookies = cookies
+
+    # url = 'http://passport.cnblogs.com/user/signin'
+    # req = s.post(url, data = login_data, headers=headers, )
+    # print(r.url)
+
+    # 连接数据库 mysql -u root -p
+    connect = pymysql.connect(
+        host='localhost',
+        # port=3306,        #  show global variables like 'port';
+        user='root',
+        passwd='123456',
+        # db='python',
+        charset='utf8'
+    )
+    # 创建游标，通过连接与数据通信
+    cursor = connect.cursor()
+    # 选择数据库，如果不存在在新建
+    cursor.execute('SHOW DATABASES')
+    # 获取结果集中的所有行
+    rows = cursor.fetchall()
+    for row in rows:
+        row = "%s" % row
+        # 判断数据库是否存在
+        if row == 'moviewall':
+            # cursor.execute('DROP DATABASE IF EXISTS ' + name)
+            break
+    else:
+        cursor.execute('CREATE DATABASE IF NOT EXISTS moviewall')
+        connect.commit()
+    cursor.execute('use moviewall')
+
+    # 选择数据表，使用预处理语句创建表 
+    # INT:系统默认长度11位整数 CHAR:无系统默认长度，char(10) 表示该字段可以存储10个汉字，或者10个数字，或者10个英文字母
+    cursor.execute('SHOW TABLES')
+    rows = cursor.fetchall()
+    for row in rows:
+        row = "%s" % row
+        if row == 'movie':
+            break
+    else:        
+        sql = """CREATE TABLE IF NOT EXISTS movie(
+                 id       INT UNSIGNED AUTO_INCREMENT,
+                 floder   CHAR(200),
+                 enname   CHAR(50),  
+                 cnname   CHAR(50),
+                 director CHAR(20),
+                 grade    INT,
+                 brief    text,
+                 primary key (id, floder)
+                 )CHARSET=utf8"""
+        cursor.execute(sql)
+
+
+# 正则：如果以[]开头，应忽略，截取年份之前的字符串(连续4个数字)
+# re.I: 不区分大小写
+    patternMovie = re.compile(r"^(\[.*?\])?[\.\s]?(.*?)[0-9]{4}", re.I)
+
+    dirs = os.listdir('D:\Project\MovieWall')
+    # 对每一个文件夹进行匹配，如果无法匹配，则先行记录，之后统一处理
+    for dir in dirs:
+        # match():   一旦匹配成功，返回值是一个match object对象，而match object 对象有方法: 
+        nameMovie = patternMovie.match(dir)
+        if nameMovie == None:
+            nameNone.append(dir)
+        else:
+            # group(m):  返回被 RE 匹配的字符串中第 m 个括号匹配部分
+            # replace(): 结果中若有'.'则全部替换成空格,单双引号在MYSQL中会报错，需转义
+            # strip():   去除首尾的空格
+            nameMovie = nameMovie.group(2).replace('.',' ').strip()
+
+            sql = "INSERT IGNORE INTO movie(floder, enname) VALUES ('%s', '%s')" % (dir, nameMovie)
+            cursor.execute(sql)
+            connect.commit()
+
+    # aa = open('test1.txt', 'w', encoding='utf-8')
+    # aa.write(str1)
+    # aa.write('\n')
+    # aa.write(b.group(2))
+    # aa.close()
+
+
+    connect.close()
