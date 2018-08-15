@@ -110,8 +110,8 @@ if __name__ == "__main__":
             # group(m):  返回被 RE 匹配的字符串中第 m 个括号匹配部分
             # replace(): 结果中若有'.'则全部替换成空格,单双引号在MYSQL中会报错，需转义
             # strip():   去除首尾的空格
-            nameMovie = nameMovie.group(2).replace('.',' ').strip()
-
+            nameMovie = nameMovie.group(2).replace('.',' ').replace("'", "\\'").replace('"', '\\"').strip()
+            dir = dir.replace("'", "\\'").replace('"', '\\"')
             sql = "INSERT IGNORE INTO movie(floder, enname) VALUES ('%s', '%s')" % (dir, nameMovie)
             cursor.execute(sql)
             connect.commit()
