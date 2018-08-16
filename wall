@@ -124,3 +124,30 @@ if __name__ == "__main__":
 
 
     connect.close()
+
+
+# https://movie.douban.com/subject_search?search_text=The+Hobbit+An+Unexpected+Journey&cat=1002
+def getContent(url, params=None, cookies=None, headers=None,
+             timeout=64):
+    import requests
+    import chardet
+
+    if not url:
+        return None
+
+    try:
+        logger.debug('Downloading page: {}'.format(url))
+        response = requests.get(url, params=params,
+                                cookies=cookies,
+                                headers=headers,
+                                timeout=timeout)
+
+        if response.status_code == 200:
+            response.encoding = chardet.detect(response.content)['encoding']
+            return response.text
+        else:
+            logger.error('Request url {} failed: {}'.format(url, response.status_code))
+
+    except Exception as err:
+        logger.error(err, exc_info=True)
+        return None
