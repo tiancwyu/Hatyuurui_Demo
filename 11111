@@ -1,4 +1,19 @@
-https://blog.csdn.net/zhujunxxxxx/article/details/29412297
+    def setLayouts(self):
+        """设置布局。"""
+        self.mainLayout = QHBoxLayout()
+        # 把标题栏7：3分，前0.7为空白，后0.3为组件，从而实现右对齐
+        # 前十分之七
+        self.mainLayout.addStretch(7)
+        self.mainLayout.addSpacing(80)
+        # 后十分之三
+        self.mainLayout.addStretch(3)
+        self.mainLayout.addWidget(self.searchLine)
+        self.mainLayout.addSpacing(10)
+        self.mainLayout.addWidget(self.line1)
+        self.mainLayout.addSpacing(10)
+        self.mainLayout.addWidget(self.showminButton)
+        self.mainLayout.addWidget(self.showmaxButton)
+        self.mainLayout.addWidget(self.closeButton)
 
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
