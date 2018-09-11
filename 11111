@@ -1,19 +1,49 @@
-    def setLayouts(self):
-        """设置布局。"""
-        self.mainLayout = QHBoxLayout()
-        # 把标题栏7：3分，前0.7为空白，后0.3为组件，从而实现右对齐
-        # 前十分之七
-        self.mainLayout.addStretch(7)
-        self.mainLayout.addSpacing(80)
-        # 后十分之三
-        self.mainLayout.addStretch(3)
-        self.mainLayout.addWidget(self.searchLine)
-        self.mainLayout.addSpacing(10)
-        self.mainLayout.addWidget(self.line1)
-        self.mainLayout.addSpacing(10)
-        self.mainLayout.addWidget(self.showminButton)
-        self.mainLayout.addWidget(self.showmaxButton)
-        self.mainLayout.addWidget(self.closeButton)
+class PicListModel(QAbstractListModel):
+    def __init__(self):
+        super().__init__()
+        self.listItemData = []
+        self.dataInit()
+
+    def data(self, index, role):
+        if index.isValid() or (0 < index.row() < len(self.listItemData)):
+            if role == Qt.DisplayRole:
+                return QVariant(self.listItemData[index.row()]['cnname'])
+            elif role == Qt.DecorationRole:
+                q = QIcon(QPixmap(self.listItemData[index.row()]['iconPath']).scaled(135,182))
+                return QVariant(q)
+            elif role == Qt.SizeHintRole:
+                return QVariant(QSize(135,210))
+            elif role == Qt.TextAlignmentRole:
+                return QVariant(int(Qt.AlignHCenter))
+            # elif role == Qt.FontRole:
+            #     font = QFont
+            #     font.setPixelSize(13)
+            #     return QVariant(font)
+        else:
+            return QVariant()
+
+    def rowCount(self, parent = QModelIndex):
+        return len(self.listItemData)
+
+    def dataInit(self):
+        itemData = {}
+        name = ['Lagaan', 'Deep Death', 'Love', 'Lagaan', 'Deep Death', 'Love', 'Deep Death']
+        iPath = ['cover/p2002791787.jpg','cover/p480880157.jpg', 'cover/p2196650583.jpg','cover/p2002791787.jpg','cover/p480880157.jpg', 'cover/p2196650583.jpg','cover/p480880157.jpg']
+        for i in range(len(name)):
+            itemData['cnname'] = name[i]
+            itemData['iconPath'] = iPath[i]
+            self.listItemData.append(itemData)
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    # demo = Pug()
+    # demo.show()
+    pListView = QListView() 
+    model1 = PicListModel()
+    pListView.setModel(model1)
+    pListView.setViewMode(QListView.IconMode)
+    pListView.show()
+    sys.exit(app.exec_())
 
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
