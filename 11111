@@ -11,7 +11,7 @@ class PicListModel(QAbstractListModel):
             elif role == Qt.DecorationRole:
                 return QVariant(QPixmap(self.listItemData[index.row()]['iconPath']).scaled(135,182,Qt.IgnoreAspectRatio,Qt.SmoothTransformation))
             elif role == Qt.SizeHintRole:
-                return QVariant(QSize(140,210))
+                return QVariant(QSize(140,220))
             elif role == Qt.TextAlignmentRole:
                 return QVariant(int(Qt.AlignHCenter|Qt.AlignVCenter))
             # elif role == Qt.FontRole:
@@ -27,7 +27,7 @@ class PicListModel(QAbstractListModel):
     def dataInit(self):
         itemData = {}
         name = ['Lagaan', 'Deep Death', 'Love', 'Lagaan', 'Deep Death', 'Love', 'Deep Death']
-        iPath = ['GUI/cover/p2002791787.jpg','GUI/cover/p480880157.jpg', 'GUI/cover/p2196650583.jpg','GUI/cover/p2002791787.jpg','GUI/cover/p480880157.jpg', 'GUI/cover/p2196650583.jpg','GUI/cover/p480880157.jpg']
+        iPath = ['cover/p2002791787.jpg','cover/p480880157.jpg', 'cover/p2196650583.jpg','cover/p2002791787.jpg','cover/p480880157.jpg', 'cover/p2196650583.jpg','cover/p480880157.jpg']
         for i in range(len(name)):
             itemData['cnname'] = name[i]
             itemData['iconPath'] = iPath[i]
@@ -42,72 +42,95 @@ class PicListDelegate(QStyledItemDelegate):
         """
         paint，有了画布画笔，想怎么显示就怎么显示，画什么按自己的想法来
         """
+        if index.isValid():
+            #首先，从索引获取数据，这里获取当前索引角色为DisplayQole的数据
+            iconPix =index.data(Qt.DecorationRole) #[QPixmap]
+            cnname = index.data(Qt.DisplayRole)
+            #绘制要显示的内容
+            # painter.setWindow(0,0,135,182)
+            painter.save()
+            painter.setRenderHint(QPainter.Antialiasing)  #反锯齿
+            # option.showDecorationSelected = True
 
-        #首先，从索引获取数据，这里获取当前索引角色为DisplayQole的数据
-        iconPix =index.data(Qt.DecorationRole) #[QPixmap]
-        cnname = index.data(Qt.DisplayRole)
-        #绘制要显示的内容
-        # painter.setWindow(0,0,135,182)
-        painter.save()
-        painter.setRenderHint(QPainter.Antialiasing)  #反锯齿
+            iconX = option.rect.x()
+            iconY = option.rect.y()
+            iconWidth = option.rect.width()
+            iconHeight = option.rect.height()
 
-        iconX = option.rect.x()
-        iconY = option.rect.y()
-        iconWidth = option.rect.width()
-        iconHeight = option.rect.height()
-        rectangle = QRectF(iconX-3, iconY-3, iconWidth+1, iconHeight-22)
+            rectangle  = QRectF(iconX+1, iconY+1, iconWidth-2, iconHeight-34)
+            # painter.drawRoundedRect(rectangle,8,8)
+            # painterPath = QPainterPath()
+            # painterPath.addRoundedRect(rectangle, 10, 10)
+            # polygon= painterPath.toFillPolygon().toPolygon()    # 获得这个路径上的所有的点, 将绘图路径作为单个多边形返回
+            # region = QRegion(polygon)   # 根据这些点构造这个区域
+            # setmask 为调用它的空间添加一个遮罩，在这个遮罩范围之外的都没有显示，但是窗体大小不会变化。
+            # QWidget.setMask(region)
+            # 绘制封面
+            painter.drawPixmap(iconX+2, iconY+2, iconWidth-4, iconHeight-38, iconPix)
+            # 绘制封面圆角，需注意颜色要与控件背景颜色一致
+            painter.setPen(QPen(QColor(50, 50, 50), 8))
+            painter.drawRoundedRect(rectangle,10,10)
+            # 绘制评分
+            painter.setPen(QPen(QColor(0, 153, 51), 1))
+            painter.setBrush(QColor(0, 153, 51))
+            painter.drawEllipse(QPoint(iconX+115,iconY+25),12,10)    # 有多种画法，这里是指定圆心和x、y轴的半径;当x、y相等时就是画圆了
+            painter.setPen(QPen(QColor(217, 217, 217), 5))
+            painter.setFont(QFont("Microsoft YaHei",10,QFont.Bold))
+            painter.drawText(iconX+105,iconY+30,"8.9")
+            # 绘制名称
+            painter.setPen(QPen(QColor(175, 175, 175), 5))
+            rect= QRect(iconX, iconY+190, iconWidth, iconHeight-190)  
+            QApplication.style().drawItemText ( painter, rect , Qt.AlignHCenter | Qt.AlignVCenter, QApplication.palette(), True,cnname )
+            # 鼠标滑过加选中效果
+            # if(option.state & QStyle.State_Selected):
+            if(option.state & QStyle.State_MouseOver):
+                rectangleM = QRectF(iconX+2, iconY+1, iconWidth-4, iconHeight)
+                painter.restore()
+                painter.save()
+                painter.setPen(QPen(QColor(51, 153, 255,30), 1))
+                painter.setBrush(QColor(51, 153, 255,30))
+                painter.drawRoundedRect(rectangleM,8,8)
 
-        # painter.drawRoundedRect(rectangle,8,8)
-        # painterPath = QPainterPath()
-        # painterPath.addRoundedRect(rectangle, 10, 10)
-        # polygon= painterPath.toFillPolygon().toPolygon()    # 获得这个路径上的所有的点, 将绘图路径作为单个多边形返回
-        # region = QRegion(polygon)   # 根据这些点构造这个区域
+            # 使painter恢复到初始状态来绘制下一个控件
+            painter.restore()
+
+class PicListView(QListView):
+    def __init__(self,parent=None):
+        super().__init__()
+        # parent是QTabWidget，点击事件需要调用parent中的另一个QWidget
+        self.parent=parent
+        self.setModel(PicListModel())
+        self.setItemDelegate(PicListDelegate())
+        self.setViewMode(QListView.IconMode)
+        self.setResizeMode(QListView.Adjust)
+        self.setSpacing(20)
+
+        with open("QSS/black.qss", 'r', encoding='utf-8') as f:
+                style = f.read()
+                self.setStyleSheet(style)
+
+    def mouseReleaseEvent(self,event):
+        if(event.button()==Qt.LeftButton):
+            print(self.size())
+            print('Mouse Clicked item:' )
+            print(self.selectionModel().selectedIndexes())
+            print(self.selectionModel().selectedIndexes()[0].row())
+
+class roundedRectPic(QWidget):
+    def __init__(self,parent=None):
+        super().__init__()
+        self.resize(338,455)
+        painter =QPainter()
+        painter.setWindow(0,0,self.width(),self.height())
+        painterPath = QPainterPath()
+        # 1092,605
+        painterPath.addRoundedRect(0,0,self.width(),self.height(), 10, 10)
+        polygon= painterPath.toFillPolygon().toPolygon()    # 获得这个路径上的所有的点, 将绘图路径作为单个多边形返回
+        region = QRegion(polygon)   # 根据这些点构造这个区域
         # setmask 为调用它的空间添加一个遮罩，在这个遮罩范围之外的都没有显示，但是窗体大小不会变化。
-        # QWidget.setMask(region)
-        
-        painter.drawPixmap(iconX, iconY, iconWidth-5, iconHeight-28, iconPix)
-        painter.setPen(QPen(QColor(50, 50, 50), 8))
-        # painter.drawPath(painterPath)
-        painter.drawRoundedRect(rectangle,10,10)
-        painter.setPen(QPen(QColor(0, 153, 51), 1))
-        painter.setBrush(QColor(0, 153, 51))
-        painter.drawEllipse(QPoint(iconX+110,iconY+20),12,10)    # 有多种画法，这里是指定圆心和x、y轴的半径;当x、y相等时就是画圆了
-        painter.setPen(QPen(QColor(217, 217, 217), 5))
-        painter.setFont(QFont("Microsoft YaHei",10,QFont.Bold))
-        painter.drawText(iconX+100,iconY+25,"8.9")
-
-        painter.setPen(QPen(QColor(175, 175, 175), 5))
-        rect= QRect(iconX, iconY+190, iconWidth, iconHeight-190)  
-        QApplication.style().drawItemText ( painter, rect , Qt.AlignHCenter | Qt.AlignVCenter, QApplication.palette(), True,cnname )
-
-        # 使painter恢复到初始状态来绘制下一个控件
-        painter.restore()
-
-
-
-        #这是关键
-        #让QApplication根据当前的风格渲染控件并画出来
-        # QApplication.style().drawControl(QStyle.CE_ProgressBar,opts,painter) 
-        
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    # demo = Pug()
-    # demo.show()
-    pListView = QListView() 
-    model1 = PicListModel()
-    pListView.setModel(model1)
-    pListView.setItemDelegate(PicListDelegate())
-    pListView.setViewMode(QListView.IconMode)
-    pListView.setResizeMode(QListView.Adjust)
-    pListView.setSpacing(20)
-
-    with open("GUI/QSS/black.qss", 'r', encoding='utf-8') as f:
-            style = f.read()
-            pListView.setStyleSheet(style)
-
-    pListView.show()
-    sys.exit(app.exec_())
+        self.setMask(region)
+        coverPic = QPixmap(r"cover/p2196650583.jpg").scaled(self.width(),self.height(),Qt.IgnoreAspectRatio,Qt.SmoothTransformation)
+        painter.drawPixmap(0,0,self.width(),self.height(), coverPic)
 
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
